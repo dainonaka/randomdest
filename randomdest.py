@@ -30,5 +30,5 @@ def drandom_destination():
 <div style = "text-align: center;"><a href = "{destination.url}", style = "font-size: 200px;">{destination.city}</a></div>"""
 
 
-run(host = "localhost", port = 8080)
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
     
