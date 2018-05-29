@@ -31,3 +31,6 @@ def drandom_destination():
 <div style = "text-align: center; background-color: pink;"><h2>↓あなたのおすすめ観光地↓</h2></div>
 <div style = "text-align: center;"><a href = "{destination.url}", style = "font-size: 200px;">{destination.city}</a></div>"""
 
+if __name__ == "__main__":
+    app.run(debug=True)
+
