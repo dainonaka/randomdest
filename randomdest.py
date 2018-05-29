@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import random
 
+#ランダムに日本の観光地を表示するぜ
 class DestinationJp():
     def __init__(self):
         r = requests.get("https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E8%A6%B3%E5%85%89%E5%9C%B0%E4%B8%80%E8%A6%A7")
