@@ -1,7 +1,8 @@
-from bottle import route, run
+from flask import Flask
 import requests
 from bs4 import BeautifulSoup
 import random
+app = Flask(__name__)
 
 #ランダムに日本の観光地を表示するぜ
 class DestinationJp():
@@ -23,13 +24,10 @@ class DestinationJp():
         self.city = random_dest
         self.url = ("https://ja.wikipedia.org" + dest_dict[random_dest].strip(","))
         
-@route("/")
+@app.route("/")
 def drandom_destination():
     destination = DestinationJp()
     return f"""
 <div style = "text-align: center; background-color: pink;"><h2>↓あなたのおすすめ観光地↓</h2></div>
 <div style = "text-align: center;"><a href = "{destination.url}", style = "font-size: 200px;">{destination.city}</a></div>"""
 
-
-run(host = "localhost", port = 8080)
-    
